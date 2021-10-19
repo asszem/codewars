@@ -24,14 +24,20 @@ describe("Testing the two fighters kata...", () => {
      });
 
      test("should return the name of the fighter who has dmage", () => {
-        const fighter1 = { name: 'Goliath', health: 100, damage: 10 };
+        const fighter1 = { name: 'Goliath', health: 100, damagePerAttack: 10 };
         const fighter2 = { name: 'David', health: 100 };
         expect(twoFighters(fighter1, fighter2)).toBe('Goliath');
     });
 
      test("should return the name of the fighter who has dmage", () => {
         const fighter1 = { name: 'Goliath', health: 100};
-        const fighter2 = { name: 'David', health: 100, damage:10 };
+        const fighter2 = { name: 'David', health: 100, damagePerAttack:10 };
         expect(twoFighters(fighter1, fighter2)).toBe('David');
+    });
+
+     test("should return the name of the fighter who wins", () => {
+        const fighter1 = { name: 'Goliath', health: 100, damagePerAttack:100};
+        const fighter2 = { name: 'David', health: 100, damagePerAttack:10 };
+        expect(twoFighters(fighter1, fighter2, 'Goliath')).toBe('Goliath');
     });
 });
