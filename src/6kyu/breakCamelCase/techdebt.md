@@ -1,0 +1,1 @@
+- removed unused variable, returning result directly
